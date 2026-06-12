@@ -1,17 +1,28 @@
 body {
+    body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: whitesmoke;
+}
 }
 header,nav,main,footer {
     padding: 1rem;
 }
 header {
-    background-color:slategray;
+    grid-area: header;
+    background-color: slategray;
     color: white;
 }
 nav {
-    background-color:darkslategray;
+     grid-area: nav;
+    background-color: darkslategray;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
 }
 nav a {
     color: white;
@@ -43,4 +54,41 @@ img {
     background-color: lightgray;
     padding:1rem;
     border-radius:8px;
+}
+.container{
+    display:grid;
+
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+section{
+    background-color:white;
+    padding:1rem;
+    margin-bottom:1rem;
+    border-radius:8px;
+}
+@media (min-width:768px){
+
+    .nav-links{
+        flex-direction:row;
+        justify-content:center;
+    }
+
+    .card-row{
+        flex-direction:row;
+    }
+}
+@media (min-width:1024px){
+
+    main{
+        max-width:1200px;
+        margin:auto;
+    }
+
+    .card{
+        flex:1;
+    }
 }
